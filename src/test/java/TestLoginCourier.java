@@ -1,4 +1,6 @@
+import io.qameta.allure.Description;
 import io.qameta.allure.Step;
+import io.qameta.allure.junit4.DisplayName;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import org.apache.http.HttpStatus;
@@ -21,6 +23,13 @@ public class TestLoginCourier {
     }
 
     @Test
+    @DisplayName("Позитивный тест запроса POST /api/v1/courier/login")
+    @Description("Тестирование запроса POST /api/v1/courier/login" +
+            "<p> Проверка, что курьер существует </p>" +
+            "<ul> Проверяем: </ul>" +
+            "<li> Статус код 200</li>" +
+            "<li> JSON с корректной структурой в теле ответа </li>" +
+            "<li> id в теле ответа </li>")
     public void testLoginCourier() {
         Courier courier = new Courier();
         courier.setLogin("Миньон1");
@@ -38,6 +47,13 @@ public class TestLoginCourier {
     }
 
     @Test
+    @DisplayName("Тест запроса POST /api/v1/courier/login")
+    @Description("Тестирование запроса POST /api/v1/courier/login" +
+            "<p> Проверка существования курьера с не валидным паролем </p>" +
+            "<ul> Проверяем: </ul>" +
+            "<li> Статус код 404</li>" +
+            "<li> JSON с корректной структурой в теле ответа </li>" +
+            "<li> Сообщение \"Учетная запись не найдена\" в теле ответа </li>")
     public void testNegativePasswordCourier() {
         //Тест проверяет запрос с не правильным паролем
         Courier courier = new Courier();

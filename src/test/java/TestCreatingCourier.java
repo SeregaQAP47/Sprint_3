@@ -1,4 +1,6 @@
+import io.qameta.allure.Description;
 import io.qameta.allure.Step;
+import io.qameta.allure.junit4.DisplayName;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import org.apache.http.HttpStatus;
@@ -20,8 +22,14 @@ public class TestCreatingCourier {
     }
 
     @Test
+    @DisplayName("Создание курьера")
+    @Description("Тестирование запроса POST/api/v1/courier" +
+            "<p> Создание нового курьера запросом POST/api/v1/courier </p>" +
+            "<ul> Проверяем: </ul>" +
+            "<li> Статус код 201</li>" +
+            "<li> JSON с корректной структурой в теле ответа </li>")
     public void testCreateCourier() {
-        Courier courier = new Courier("Runner", "1234", "saske");
+        Courier courier = new Courier("Run", "1234", "saske");
         response = given()
                 .header("Content-type", "application/json")
                 .and()
@@ -35,9 +43,15 @@ public class TestCreatingCourier {
     }
 
     @Test
+    @DisplayName("Создание копии зарегистрированного курьера")
+    @Description("Тестирование запроса POST/api/v1/courier" +
+            "<p> Создание копии курьера невозможно" +
+            "<ul> Проверяем: </ul>" +
+            "<li> Статус код 409</li>" +
+            "<li> JSON с корректной структурой в теле ответа </li>")
     public void testDuplicateCourier() {
         //Тест для проверки создания одинаковых курьеров
-        Courier courier = new Courier("Миньон1","1234","Вася");
+        Courier courier = new Courier("Миньон4","1234","Вася");
         //Запрос на создание курьера
         response = given()
                 .header("Content-type", "application/json")

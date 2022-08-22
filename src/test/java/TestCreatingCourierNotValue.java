@@ -1,4 +1,6 @@
+import io.qameta.allure.Description;
 import io.qameta.allure.Step;
+import io.qameta.allure.junit4.DisplayName;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import org.apache.http.HttpStatus;
@@ -40,6 +42,14 @@ public class TestCreatingCourierNotValue {
     }
 
     @Test
+    @DisplayName("Создание курьера с отсутствующими параметрами")
+    @Description("Тестирование запроса POST/api/v1/courier" +
+            "<p> Создание нового курьера запросом POST/api/v1/courier </p>" +
+            "<p> с отсутствующими обязательными параметрами</p>" +
+            "<ul> Проверяем: </ul>" +
+            "<li> Статус код 400</li>" +
+            "<li> JSON с корректной структурой в теле ответа </li>" +
+            "<li> Сообщеение о недостатке данных в теле ответа </li>")
     public void testCreateCourierWithoutRequiredParameters() {
         Courier courier = new Courier(login, password, firstName);
         response = given()
