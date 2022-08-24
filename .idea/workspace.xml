@@ -5,64 +5,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0e3824a1-f9cc-4d2a-8569-4b957d0b0c5d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_code_gson_gson_2_9_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_codec_commons_codec_1_11.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_logging_commons_logging_1_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_qameta_allure_allure_attachments_2_19_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_qameta_allure_allure_java_commons_2_19_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_qameta_allure_allure_junit4_2_19_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_qameta_allure_allure_model_2_19_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_qameta_allure_allure_rest_assured_2_19_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_rest_assured_json_path_5_1_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_rest_assured_rest_assured_5_1_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_rest_assured_rest_assured_common_5_1_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_rest_assured_xml_path_5_1_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_4_13_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_lang3_3_11.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_groovy_groovy_4_0_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_groovy_groovy_json_4_0_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_groovy_groovy_xml_4_0_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_httpcomponents_httpclient_4_5_13.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_httpcomponents_httpcore_4_4_13.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_httpcomponents_httpmime_4_5_13.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_ccil_cowan_tagsoup_tagsoup_1_2_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_freemarker_freemarker_2_3_31.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_2_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_core_1_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_api_1_7_30.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Sprint_3.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/helper/DeleteHelper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/helper/RequestCustom.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/pojo/DeleteCourierId.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/TestCreatingCourier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestCreatingCourier.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/TestCreatingCourierNotValue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestCreatingCourierNotValue.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/TestLoginCourier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestLoginCourier.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/allure-results/0c6e5462-1357-431d-be1f-e7c2805bb5fc-result.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/allure-results/10e848a8-f8d5-42a4-ad27-759f2fa2fc13-result.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/allure-results/3728592e-5664-4162-b5c2-b403164bf169-result.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/allure-results/38b72c8d-6720-4e05-8347-6cd94d87644d-result.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/allure-results/7cd85e21-bedf-4444-9ccc-27ba703dae86-result.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/allure-results/82ac0a4b-6056-47a5-9f9c-c44a070dae66-result.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/allure-results/8c2ade0a-8ca2-4bdc-8ee2-e5d2f23f2b1f-result.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/allure-results/93772d03-7ddb-44fc-bd6b-b213a31a7a2f-result.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/allure-results/a1847da4-852f-4e04-9ce3-da86324a2be6-result.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/allure-results/allure.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/allure-results/allure.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/allure-results/c4307acd-c27e-455e-9029-c69441ffe200-result.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/allure-results/cdc3aaea-0cdd-467f-aa48-37c24228439b-result.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/allure-results/ebbb4738-3c01-45e2-9acf-feeb3c85b5ce-result.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/allure-results/f55aceaf-e89d-4aee-be40-e1e6c6a3d597-result.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/allure-results/f776c380-2cb0-446c-a66d-b987eb7b426d-result.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/allure-results/fca25b60-e97f-4f49-b832-b6836333b440-result.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/TestLoginCuriesNotValue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestLoginCuriesNotValue.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -76,11 +38,15 @@
     <property name="ASKED_MARK_IGNORED_FILES_AS_EXCLUDED" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../qa_java" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Sprint_T" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\yagun\IdeaProjects\Sprint_3" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="pojo" />
+      <recent name="helper" />
     </key>
   </component>
   <component name="RunAnythingCache">
@@ -88,6 +54,45 @@
       <command value="mvn test clean" />
       <command value="mvn allure:serve" />
     </option>
+  </component>
+  <component name="RunManager" selected="JUnit.TestCreatingCourierNotValue.testCreateCourierWithoutRequiredParameters">
+    <configuration name="TestCreatingCourierNotValue.testCreateCourierWithoutRequiredParameters" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Sprint_3" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="TestCreatingCourierNotValue" />
+      <option name="METHOD_NAME" value="testCreateCourierWithoutRequiredParameters" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestCreatingCourier.testCreateCourier" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Sprint_3" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="TestCreatingCourier" />
+      <option name="METHOD_NAME" value="testCreateCourier" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestCreatingCourier.testDuplicateCourier" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Sprint_3" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="TestCreatingCourier" />
+      <option name="METHOD_NAME" value="testDuplicateCourier" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.TestCreatingCourierNotValue.testCreateCourierWithoutRequiredParameters" />
+        <item itemvalue="JUnit.TestCreatingCourier.testDuplicateCourier" />
+        <item itemvalue="JUnit.TestCreatingCourier.testCreateCourier" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">

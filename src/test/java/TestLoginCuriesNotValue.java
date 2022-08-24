@@ -1,3 +1,4 @@
+import helper.RequestCustom;
 import io.qameta.allure.Step;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
@@ -8,7 +9,6 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import pojo.Courier;
 
-import static io.restassured.RestAssured.given;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
 
@@ -18,6 +18,7 @@ public class TestLoginCuriesNotValue {
     private Response response;
     private final String login;
     private final String password;
+    private RequestCustom requestCustom = new RequestCustom();
 
     @Before
     public void setUp() {
@@ -44,12 +45,8 @@ public class TestLoginCuriesNotValue {
         courier.setLogin(login);
         courier.setPassword(password);
 
-        response = given()
-                .header("Content-type", "application/json")
-                .and()
-                .body(courier)
-                .when()
-                .post(endpoint);
+        response = requestCustom.postLoginCourier(courier);
+
         System.out.println(response.asPrettyString());
         checkStatusCode(HttpStatus.SC_BAD_REQUEST);
         checkError(400, "Недостаточно данных для входа");

@@ -1,3 +1,5 @@
+import helper.DeleteHelper;
+import helper.RequestCustom;
 import io.qameta.allure.Description;
 import io.qameta.allure.Step;
 import io.qameta.allure.junit4.DisplayName;
@@ -8,14 +10,15 @@ import org.junit.Before;
 import org.junit.Test;
 import pojo.Courier;
 
-import static io.restassured.RestAssured.given;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.notNullValue;
 
 public class TestLoginCourier {
-    private final String endpoint = "/api/v1/courier/login";
     private Response response;
+    private final String login = "МиньонXY";
+    private final String password = "1234";
+    private DeleteHelper deleteHelper = new DeleteHelper();
 
     @Before
     public void setUp() {
@@ -32,18 +35,20 @@ public class TestLoginCourier {
             "<li> id в теле ответа </li>")
     public void testLoginCourier() {
         Courier courier = new Courier();
-        courier.setLogin("Миньон1");
-        courier.setPassword("1234");
+        courier.setLogin(login);
+        courier.setPassword(password);
+        RequestCustom requestCustom = new RequestCustom();
+        //Создаем курьера
+        response = requestCustom.postCreateCourierRequest(courier);
+        checkStatusCode(HttpStatus.SC_CREATED);
 
-        response = given()
-                .header("Content-type", "application/json")
-                .and()
-                .body(courier)
-                .when()
-                .post(endpoint);
+        //Проверяем Id
+        response = requestCustom.postLoginCourier(courier);
+
         System.out.println(response.asPrettyString());
         checkStatusCode(HttpStatus.SC_OK);
         response.then().assertThat().body("id", notNullValue());
+        deleteHelper.deleteCourier(getIdCourier(response));
     }
 
     @Test
@@ -56,19 +61,24 @@ public class TestLoginCourier {
             "<li> Сообщение \"Учетная запись не найдена\" в теле ответа </li>")
     public void testNegativePasswordCourier() {
         //Тест проверяет запрос с не правильным паролем
+        RequestCustom requestCustom = new RequestCustom();
+        //Создаем курьера
         Courier courier = new Courier();
-        courier.setLogin("Миньон1");
-        courier.setPassword("0000");
+        courier.setLogin(login);
+        courier.setPassword(password);
+        response = requestCustom.postCreateCourierRequest(courier);
+        checkStatusCode(HttpStatus.SC_CREATED);
+        //Отправляем запрос на получение id с не верным паролем
+        Courier courierDuplicate = new Courier();
+        courierDuplicate.setLogin(login);
+        courierDuplicate.setPassword("0000");
 
-        response = given()
-                .header("Content-type", "application/json")
-                .and()
-                .body(courier)
-                .when()
-                .post(endpoint);
+        response = requestCustom.postLoginCourier(courierDuplicate);
+
         System.out.println(response.asPrettyString());
         checkStatusCode(HttpStatus.SC_NOT_FOUND);
         checkError(404, "Учетная запись не найдена");
+        deleteHelper.deleteCourier(courier);
     }
 
     @Step("Проверяем, что статус код  = {httpStatus}")
@@ -80,6 +90,12 @@ public class TestLoginCourier {
     private void checkError(int expectCode, String expectMessage) {
         response.then().assertThat().body("code", equalTo(expectCode))
                 .and().assertThat().body("message", equalTo(expectMessage));
+    }
+
+    @Step("Получение id курьера из тела ответа")
+    private int getIdCourier(Response response) {
+        int id = response.then().extract().body().jsonPath().getInt("id");
+        return id;
     }
 
 }

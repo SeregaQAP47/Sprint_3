@@ -1,3 +1,4 @@
+import helper.RequestCustom;
 import io.qameta.allure.Description;
 import io.qameta.allure.Step;
 import io.qameta.allure.junit4.DisplayName;
@@ -10,13 +11,11 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import pojo.Courier;
 
-import static io.restassured.RestAssured.given;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
 
 @RunWith(Parameterized.class)
 public class TestCreatingCourierNotValue {
-    private final String endpointCourier = "/api/v1/courier";
     private Response response;
     private final String login;
     private final String password;
@@ -52,12 +51,8 @@ public class TestCreatingCourierNotValue {
             "<li> Сообщеение о недостатке данных в теле ответа </li>")
     public void testCreateCourierWithoutRequiredParameters() {
         Courier courier = new Courier(login, password, firstName);
-        response = given()
-                .header("Content-type", "application/json")
-                .and()
-                .body(courier)
-                .when()
-                .post(endpointCourier);
+        RequestCustom requestCustom = new RequestCustom();
+        response = requestCustom.postCreateCourierRequest(courier);
 
         System.out.println(response.asPrettyString());
         checkStatusCode(HttpStatus.SC_BAD_REQUEST);
